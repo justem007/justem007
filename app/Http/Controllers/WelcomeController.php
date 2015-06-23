@@ -1,5 +1,7 @@
 <?php namespace CodeCommerce\Http\Controllers;
 
+use CodeCommerce\Category;
+use CodeCommerce\Product;
 use Illuminate\Routing\Controller;
 
 
@@ -22,10 +24,17 @@ class WelcomeController extends Controller {
      * @return void
      */
 
+    private $categories;
 
-    public function __construct()
+    private $products;
+
+    public function __construct(Category $category, Product $product)
     {
         $this->middleware('guest');
+
+        $this->categories = $category;
+
+        $this->products = $product;
     }
 
     /**
@@ -40,10 +49,14 @@ class WelcomeController extends Controller {
 
     public function exemplo()
     {
-        $nome = "Ricardo";
-        $sobrenome = "Justem";
+        $categories = $this->categories->all();
+        return view('exemplo', compact('categories'));
+    }
 
-        return view('exemplo',compact('nome', 'sobrenome'));
+    public function exemplo2()
+    {
+        $products = $this->products->all();
+        return view('exemplo2', compact('products'));
     }
 
 }

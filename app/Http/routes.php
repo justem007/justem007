@@ -13,17 +13,24 @@
 
 
 
-Route::pattern('id', '[0-9]+');
-
-Route::get('user/{id?}', function($id = null){
-    if($id)
-        return "Olá $id";
-    return "Não existe ID";
-});
+//Route::pattern('id', '[0-9]+');
+//
+//Route::get('user/{id?}', function($id = null){
+//    if($id)
+//        return "Olá $id";
+//    return "Não existe ID";
+//});
 
 Route::get('/', 'WelcomeController@index');
 
 Route::get('exemplo', 'WelcomeController@exemplo');
+Route::get('exemplo2', 'WelcomeController@exemplo2');
+
+
+Route::get('admin/categories', 'AdminCategoriesController@index');
+Route::get('admin/products', 'AdminProductsController@index');
+
+
 
 Route::get('home', 'HomeController@index');
 
