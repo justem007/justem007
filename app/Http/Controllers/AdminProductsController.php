@@ -48,7 +48,7 @@ class AdminProductsController extends Controller
      */
     public function store()
     {
-        return "Store";
+
     }
 
     /**
@@ -57,11 +57,9 @@ class AdminProductsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id = null)
+    public function show($id)
     {
-        if($id)
-            return "Show $id";
-        return "Show sem id";
+
     }
 
     /**
@@ -70,11 +68,9 @@ class AdminProductsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit($id = null)
+    public function edit($id)
     {
-        if($id)
-            return "Edit $id";
-        return "Edit sem id";
+
     }
 
     /**
@@ -83,11 +79,9 @@ class AdminProductsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id = null)
+    public function update($id)
     {
-        if($id)
-            return "Update $id";
-        return "Update sem id";
+
     }
 
     /**
@@ -96,10 +90,8 @@ class AdminProductsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id = null)
+    public function destroy($id)
     {
-        if($id)
-            return "Destroy $id";
-        return "Destroy sem id";
+
     }
 }
