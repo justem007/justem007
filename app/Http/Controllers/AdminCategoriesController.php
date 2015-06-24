@@ -39,7 +39,7 @@ class AdminCategoriesController extends Controller
      */
     public function create()
     {
-        //
+        return "Create";
     }
 
     /**
@@ -49,7 +49,7 @@ class AdminCategoriesController extends Controller
      */
     public function store()
     {
-        //
+        return "Store";
     }
 
     /**
@@ -58,9 +58,9 @@ class AdminCategoriesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return "Show";
     }
 
     /**
@@ -69,9 +69,9 @@ class AdminCategoriesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        return "Edit";
     }
 
     /**
@@ -80,9 +80,9 @@ class AdminCategoriesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update()
     {
-        //
+        return "Update";
     }
 
     /**
@@ -91,8 +91,8 @@ class AdminCategoriesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy()
     {
-        //
+        return "Destroy";
     }
 }

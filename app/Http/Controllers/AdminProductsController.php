@@ -38,7 +38,7 @@ class AdminProductsController extends Controller
      */
     public function create()
     {
-        //
+        return "Create";
     }
 
     /**
@@ -48,7 +48,7 @@ class AdminProductsController extends Controller
      */
     public function store()
     {
-        //
+        return "Store";
     }
 
     /**
@@ -57,9 +57,9 @@ class AdminProductsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return "Show";
     }
 
     /**
@@ -68,9 +68,9 @@ class AdminProductsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        return "Edit";
     }
 
     /**
@@ -79,9 +79,9 @@ class AdminProductsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update()
     {
-        //
+        return "Update";
     }
 
     /**
@@ -90,8 +90,8 @@ class AdminProductsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy()
     {
-        //
+        return "Destroy";
     }
 }
