@@ -58,9 +58,11 @@ class AdminCategoriesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show()
+    public function show($id = null)
     {
-        return "Show";
+        if($id)
+        return "Show $id";
+    return "Show sem id";
     }
 
     /**
@@ -69,9 +71,11 @@ class AdminCategoriesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit()
+    public function edit($id = null)
     {
-        return "Edit";
+        if($id)
+            return "Edit $id";
+        return "Edit sem id";
     }
 
     /**
@@ -80,9 +84,11 @@ class AdminCategoriesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update()
+    public function update($id = null)
     {
-        return "Update";
+        if($id)
+            return "Update $id";
+        return "Update sem id";
     }
 
     /**
@@ -91,8 +97,10 @@ class AdminCategoriesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy()
+    public function destroy($id = null)
     {
-        return "Destroy";
+        if($id)
+            return "Destroy $id";
+        return "Destroy sem id";
     }
 }
