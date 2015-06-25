@@ -13,11 +13,17 @@
                 <th>ACTION</th>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                @foreach($categories as $category)
+                <td>{{ $category->id }}</td>
+                <td>{{ $category->name }}</td>
+                <td>{{ $category->description }}</td>
+                <td>
+                    <a href="{{ route('categories.destroy',['id'=>$category->id]) }}">Destroy |</a>
+                    <a href="{{ route('categories.create') }}"> Create |</a>
+                    <a href="{{ route('categories.edit',['id'=>$category->id]) }}"> Edit</a>
+                </td>
             </tr>
+            @endforeach
         </table>
 
     </div>
