@@ -21,7 +21,7 @@
 
                 <td>{{ $product->id }}</td>
                 <td>{{ $product->name }}</td>
-                <td>{{ $product->description }}</td>
+                <td>{{ str_limit( $product->description, $limit = 60, $end = '...') }}</td>
                 <td>{{ $product->price }}</td>
                 <td>{{ $product->featured }}</td>
                 <td>{{ $product->recommend }}</td>

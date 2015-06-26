@@ -4,8 +4,10 @@ namespace CodeCommerce\Http\Controllers;
 
 use CodeCommerce\Category;
 use CodeCommerce\Http\Requests;
+use CodeCommerce\Http\Requests\ProductsRequest;
 use CodeCommerce\Product;
 use Illuminate\Http\Request;
+
 
 class ProductController extends Controller
 {
@@ -42,6 +44,8 @@ class ProductController extends Controller
 
         $categories = $category->lists('name', 'id');
 
+
+
         return view('products.create', compact('categories'));
     }
 
@@ -53,6 +57,9 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
+
+        $input['featured'] = isset($input['featured']) ? 1 : 0;
+        $input['recommend'] = isset($input['recommend']) ? 1 : 0;
 
         $product = $this->productModel->fill($input);
 

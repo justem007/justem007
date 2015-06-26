@@ -32,12 +32,14 @@
 
         <div class="form-group">
             {!! Form::label('featured', 'Featured :') !!}
-            {!! Form::checkbox('featured', $product->featured) !!}
+            {!! Form::hidden('featured',0 ); !!}
+            {!! Form::checkbox('featured', 1, ($product->featured == '1') ? 1 : 0) !!}
         </div>
 
         <div class="form-group">
             {!! Form::label('recommend', 'Recommended :') !!}
-            {!! Form::checkbox('recommend', $product->recommend) !!}
+            {!! Form::hidden('recommend',0 ); !!}
+            {!! Form::checkbox('recommend', 1, ($product->recommend == '1') ? 1 : 0) !!}
         </div>
 
         <div class="form-group">
@@ -46,7 +48,7 @@
         </div>
 
         <div class="form-group">
-            {!! Form::submit('Atualizar Product',['class'=>'btn btn-primary']) !!}
+            {!! Form::submit('Atualizar Product', ['class'=>'btn btn-primary']) !!}
         </div>
 
             {!! Form::close() !!}

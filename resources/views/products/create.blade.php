@@ -13,7 +13,7 @@
                 </ul>
             @endif
 
-            {!! Form::open(['url'=>'products']) !!}
+            {!! Form::open(['url'=>'admin/products']) !!}
 
         <div class="form-group">
             {!! Form::label('category', 'Category :') !!}
@@ -32,13 +32,25 @@
 
         <div class="form-group">
             {!! Form::label('featured', 'Featured :') !!}
-            {!! Form::checkbox('featured', null, ['class'=>'checkbox']) !!}
+            {!! Form::hidden('featured',0 ); !!}
+            {!! Form::checkbox('featured', 1 , null,  ['class'=>'checkbox style-0'])!!}
         </div>
 
         <div class="form-group">
             {!! Form::label('recommend', 'Recommended :') !!}
-            {!! Form::checkbox('recommend', null, ['class'=>'checkbox']) !!}
+            {!! Form::hidden('recommend', 0); !!}
+            {!! Form::checkbox('recommend',1 , null,  ['class'=>'checkbox style-0'])!!}
         </div>
+
+        {{--<div class="form-group">--}}
+            {{--{!! Form::label('featured', 'Featured :') !!}--}}
+            {{--{!! Form::select('featured', array('1' => 'YES', '0' => 'NO'), ['class'=>'select']) !!}--}}
+        {{--</div>--}}
+
+        {{--<div class="form-group">--}}
+            {{--{!! Form::label('recommend', 'Recommended :') !!}--}}
+            {{--{!! Form::select('recommend', array('1' => 'YES', '0' => 'NO'), ['class'=>'select']) !!}--}}
+        {{--</div>--}}
 
         <div class="form-group">
             {!! Form::label('description', 'Description :') !!}
