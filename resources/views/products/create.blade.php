@@ -16,6 +16,11 @@
             {!! Form::open(['url'=>'products']) !!}
 
         <div class="form-group">
+            {!! Form::label('category', 'Category :') !!}
+            {!! Form::select('category_id', $categories, null,['class'=>'form-control']) !!}
+        </div>
+
+        <div class="form-group">
             {!! Form::label('name', 'Name :') !!}
             {!! Form::text('name', null, ['class'=>'form-control']) !!}
         </div>
@@ -27,12 +32,12 @@
 
         <div class="form-group">
             {!! Form::label('featured', 'Featured :') !!}
-            {!! Form::select('featured', array('Y' => 'YES', 'N' => 'NO')) !!}
+            {!! Form::checkbox('featured', null, ['class'=>'checkbox']) !!}
         </div>
 
         <div class="form-group">
             {!! Form::label('recommend', 'Recommended :') !!}
-            {!! Form::select('recommend', array('Y' => 'YES', 'N' => 'NO')) !!}
+            {!! Form::checkbox('recommend', null, ['class'=>'checkbox']) !!}
         </div>
 
         <div class="form-group">
