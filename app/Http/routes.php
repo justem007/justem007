@@ -12,6 +12,8 @@
 */
 Route::group(['prefix'=>'admin', 'where'=>['id'=>'[0-9]+']], function ()
 {
+
+
     Route::group(['prefix'=> 'categories'], function () {
         Route::get('/', ['as' => 'categories', 'uses' => 'CategoriesController@index']);
         Route::post('/', ['as' => 'categories.store', 'uses' => 'CategoriesController@store']);
@@ -19,15 +21,26 @@ Route::group(['prefix'=>'admin', 'where'=>['id'=>'[0-9]+']], function ()
         Route::get('{id}/destroy', ['as' => 'categories.destroy', 'uses' => 'CategoriesController@destroy']);
         Route::get('{id}/edit', ['as' => 'categories.edit', 'uses' => 'CategoriesController@edit']);
         Route::post('{id}/update', ['as' => 'categories.update', 'uses' => 'CategoriesController@update']);
+
+
     });
 
 
-        Route::get('products', ['as'=>'products', 'uses'=>'ProductController@index']);
-        Route::post('products', ['as'=>'products.store', 'uses'=>'ProductController@store']);
-        Route::get('products/create', ['as'=>'products.create', 'uses'=>'ProductController@create']);
-        Route::get('products/{id}/destroy', ['as'=>'products.destroy', 'uses'=>'ProductController@destroy']);
-        Route::get('products/{id}/edit', ['as'=>'products.edit', 'uses'=>'ProductController@edit']);
-        Route::post('products/{id}/update', ['as'=>'products.update', 'uses'=>'ProductController@update']);
+    Route::group(['prefix'=> 'products'], function () {
+        Route::get('/', ['as'=>'products', 'uses'=>'ProductController@index']);
+        Route::post('/', ['as'=>'products.store', 'uses'=>'ProductController@store']);
+        Route::get('create', ['as'=>'products.create', 'uses'=>'ProductController@create']);
+        Route::get('{id}/destroy', ['as'=>'products.destroy', 'uses'=>'ProductController@destroy']);
+        Route::get('{id}/edit', ['as'=>'products.edit', 'uses'=>'ProductController@edit']);
+        Route::post('{id}/update', ['as'=>'products.update', 'uses'=>'ProductController@update']);
+
+            Route::group(['prefix'=> 'images'], function () {
+                Route::get('{id}/product', ['as'=>'products.images', 'uses'=>'ProductController@images']);
+                Route::get('create/{id}/product', ['as'=>'products.images.create', 'uses'=>'ProductController@createImage']);
+                Route::post('store/{id}/product', ['as'=>'products.images.store', 'uses'=>'ProductController@storeImage']);
+
+        });
+    });
 
 });
 
