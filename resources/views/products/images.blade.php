@@ -5,7 +5,7 @@
 
         <h1>Images of {{ $products->name }}</h1>
 
-        <a href="#" class="btn btn-default btn-primary"> New Image </a>
+        <a href="{{ route('products.images.create',['id'=>$products->id]) }}" class="btn btn-default btn-primary"> New Image </a>
             <br /> <br />
         <table class="table">
             <tr>
@@ -20,7 +20,9 @@
                 <td>{{ $image->id }}</td>
                 <td><img src="{{ url('uploads/'.$image->id.'.'.$image->extension) }}" width="80"></td>
                 <td>{{ $image->extension }}</td>
-                <td></td>
+                <td>
+                    <a href="{{ route('products.images.destroy',['id'=>$image->id]) }}">Delete</a>
+                </td>
             </tr>
             @endforeach
         </table>
