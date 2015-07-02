@@ -48,6 +48,18 @@
         </div>
 
         <div class="form-group">
+            {!! Form::label('tags', 'Tags já cadastradas para este produto:') !!}
+            @foreach($product->tags as $tag)
+                <div class="btn btn-sm btn-default">{{ $tag->name }}</div>
+            @endforeach
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('tags','Tags:') !!}
+            {!! Form::textarea('tags', $product->tagList, ['class'=>'form-control']) !!}
+        </div>
+
+        <div class="form-group">
             {!! Form::submit('Atualizar Product', ['class'=>'btn btn-primary']) !!}
         </div>
 

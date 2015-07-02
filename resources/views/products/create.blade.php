@@ -13,7 +13,7 @@
                 </ul>
             @endif
 
-            {!! Form::open(['url'=>'admin/products']) !!}
+            {!! Form::open(['route' => 'products.store']) !!}
 
         <div class="form-group">
             {!! Form::label('category', 'Category :') !!}
@@ -42,25 +42,21 @@
             {!! Form::checkbox('recommend',1 , null,  ['class'=>'checkbox style-0'])!!}
         </div>
 
-        {{--<div class="form-group">--}}
-            {{--{!! Form::label('featured', 'Featured :') !!}--}}
-            {{--{!! Form::select('featured', array('1' => 'YES', '0' => 'NO'), ['class'=>'select']) !!}--}}
-        {{--</div>--}}
-
-        {{--<div class="form-group">--}}
-            {{--{!! Form::label('recommend', 'Recommended :') !!}--}}
-            {{--{!! Form::select('recommend', array('1' => 'YES', '0' => 'NO'), ['class'=>'select']) !!}--}}
-        {{--</div>--}}
-
         <div class="form-group">
             {!! Form::label('description', 'Description :') !!}
             {!! Form::textarea('description', null, ['class'=>'form-control']) !!}
         </div>
 
         <div class="form-group">
+            {!! Form::label('tags','Tags:') !!}
+            {!! Form::textarea('tags', null, ['class'=>'form-control']) !!}
+        </div>
+
+        <div class="form-group">
             {!! Form::submit('Adicionar Produtos',['class'=>'btn btn-primary']) !!}
             <a href="{{ route('products') }}" class="btn btn-default">Voltar</a>
         </div>
+
 
             {!! Form::close() !!}
 

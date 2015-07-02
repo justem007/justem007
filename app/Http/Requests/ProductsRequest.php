@@ -26,7 +26,8 @@ class ProductsRequest extends Request
         return [
             'name'          =>'required|max:60',
             'description'   =>'required',
-            'price'         =>'required'
+            'price'         =>'required',
+            'tags' => 'required|unique:tags,name'
                     ];
     }
 }

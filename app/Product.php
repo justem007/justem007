@@ -30,9 +30,9 @@ class Product extends Model
         return $this->belongsToMany('CodeCommerce\Tag');
     }
 
-    public function getTagListAttribute()
-    {
-        $tags = $this->tags->list('name');
-        return implode(',', $tags);
-    }
+//    public function getTagListAttribute()
+//    {
+//        $tags = $this->tags->list('name');
+//        return implode(',', $tags);
+//    }
 }
