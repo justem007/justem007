@@ -23,6 +23,7 @@ class ProductController extends Controller
      */
 
     private $productModel;
+    private $tagModel;
 
     public function __construct(Product $productModel,Tag $tagModel )
     {
@@ -52,7 +53,6 @@ class ProductController extends Controller
 
     public function store(ProductsRequest $request)
     {
-        $inputTags = explode(',', $request->get('tags'));
 
         $input = $request->all();
 
@@ -81,7 +81,7 @@ class ProductController extends Controller
 
     }
 
-    public function update(Request $request  ,$id)
+    public function update(ProductsRequest $request  ,$id)
     {
 
         $input = $request->all();
