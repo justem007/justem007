@@ -1,8 +1,14 @@
 @extends('store.store')
 
-@section('categories')
+@section('sidebar')
+    <div class="col-sm-3">
+        <div class="left-sidebar">
     @include('store.partial.categories')
-@stop
+    @include('store.partial.tags')
+
+        </div>
+    </div>
+@endsection
 
 @section('content')
     <div class="col-sm-9 padding-right">
@@ -23,4 +29,4 @@
         </div><!--recommended-->
 
     </div>
-@stop
+@endsection

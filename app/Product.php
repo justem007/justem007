@@ -53,7 +53,8 @@ class Product extends Model
         return $query->where('category_id','=',$type);
     }
 
-    public function scopeOfTag($query, $type){
+    public function scopeOfTag($query, $type)
+    {
         return $query->whereHas('tags', function($q) use ($type){
         $q->where('id', '=', $type);
                  });

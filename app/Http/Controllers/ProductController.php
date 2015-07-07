@@ -27,7 +27,6 @@ class ProductController extends Controller
 
     public function __construct(Product $productModel,Tag $tagModel )
     {
-        $this->middleware('guest');
         $this->productModel = $productModel;
         $this->tagModel = $tagModel;
     }

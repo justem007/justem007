@@ -1,8 +1,13 @@
 @extends('store.store')
 
-@section('categories')
-    @include('store.partial.categories')
-@stop
+@section('sidebar')
+    <div class="col-sm-3">
+        <div class="left-sidebar">
+            @include('store.partial.categories')
+            @include('store.partial.tags')
+        </div>
+    </div>
+@endsection
 
 @section('content')
 
@@ -56,4 +61,4 @@
         </div>
         <!--/product-details-->
     </div>
-@stop
+@endsection

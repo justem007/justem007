@@ -105,7 +105,7 @@
         <div class="row">
 
         {{--categorias--}}
-            @yield('categories')
+            @yield('sidebar')
         {{--categorias--}}
 
 
