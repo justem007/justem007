@@ -8,7 +8,7 @@ class Tag extends Model
 {
    protected $fillable = ['name'];
 
-   public function product()
+   public function products()
    {
        return $this->belongsToMany('CodeCommerce\Product');
    }
