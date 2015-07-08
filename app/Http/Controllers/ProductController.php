@@ -52,7 +52,6 @@ class ProductController extends Controller
 
     public function store(ProductsRequest $request)
     {
-
         $input = $request->all();
 
         $input['featured'] = isset($input['featured']) ? 1 : 0;
@@ -65,7 +64,6 @@ class ProductController extends Controller
         $product->save();
 
         $product->tags()->attach($newTagsRelatedToProduct);
-
 
         return redirect()->route('products');
 

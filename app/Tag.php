@@ -13,9 +13,9 @@ class Tag extends Model
        return $this->belongsToMany('CodeCommerce\Product');
    }
 
-    public function scopeOfTag($query, $type){
-        return $query->whereHas('products.category', function($q) use ($type){
-            $q->where('id', '=', $type);
-        });
-    }
+//    public function scopeOfTag($query, $type){
+//        return $query->whereHas('products.category', function($q) use ($type){
+//            $q->where('id', '=', $type);
+//        });
+//    }
 }

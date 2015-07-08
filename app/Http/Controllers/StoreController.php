@@ -36,6 +36,7 @@ class StoreController extends Controller
         $category = Category::find($id);
         $products = Product::ofCategory($id)->get();
 //        $tags = $this->tagModel->ofCategory($category->id)->get();
+        //$tags = $this->tagModel->find($id);
 
         return view('store.category', compact('categories', 'category', 'products', 'tags'));
     }
@@ -43,18 +44,25 @@ class StoreController extends Controller
     public function product($id)
     {
         $categories = Category::all();
-        $product = Product::find($id);
+        $products = Product::find($id);
+        $tags= $products->tags()->get();
 
-        $tags= $product->tags()->get();
-
-        return view('store.product', compact('categories', 'product','tags'));
+        return view('store.product', compact('categories', 'products','tags'));
     }
-
-    public function tag(Tag $tags)
+    public function tag($id)
     {
-        $categories = $this->categoryModel->all();
-        $products   = $this->productModel->ofTag($tags->id)->get();
-        return view('store.tag', compact('categories', 'products', 'tags'));
-    }
+//        $categories = $this->categoryModel->all();
+//        $products   = $this->productModel->ofTag($tags->id)->get();
+//        //$products = $tags->products;
+//        $tags = $this->tagModel->find($id);
+//
+//        return view('store.tag', compact('categories', 'products', 'tags'));
 
+        $categories = Category::all();
+        $tag = Tag::find($id);
+        $products = $tag->products;
+        return view('store.tag', compact('categories', 'products', 'tag'));
+
+
+    }
 }

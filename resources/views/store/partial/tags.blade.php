@@ -4,7 +4,7 @@
         @foreach($tags as $tag)
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4 class="panel-title"><a href="{{ route('store.tags', compact('tag')) }}">{{ $tag->name }}</a>
+                    <h4 class="panel-title"><a href="{{ route('store.tags', $tag->id) }}">{{ $tag->name }}</a>
                     </h4>
                 </div>
             </div>
